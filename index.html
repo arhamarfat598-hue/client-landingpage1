@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FlySmart – Flight Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">FS</div>
+      <div>
+        <div class="brand-title">FlySmart</div>
+        <div class="brand-sub">Modern flight search landing page</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#search" class="badge">10% OFF</a>
+      <a href="#features">Features</a>
+      <a href="#results">Results</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- HERO WITH BACKGROUND VIDEO -->
+    <section class="hero" id="search">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <!-- Tumhara background video file -->
+        <source src="video.mp4.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay">
+        <div class="hero-inner slide-up">
+          <div class="hero-text fade-in">
+            <h1>Book smarter flights in seconds.</h1>
+            <p>
+              Live distance & duration from AeroDataBox · Estimated fares in
+              USD · Real-time API, no dummy data.
+            </p>
+          </div>
+
+          <!-- SEARCH FORM -->
+          <form id="searchForm" class="search-card float-up">
+            <div class="field">
+              <label for="from">From</label>
+              <input
+                id="from"
+                placeholder="Delhi, DEL, New Delhi"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="to">To</label>
+              <input
+                id="to"
+                placeholder="Dubai, DXB"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="date">Date</label>
+              <input id="date" type="date" required />
+            </div>
+
+            <div class="field field-small">
+              <label for="passengers">Passengers</label>
+              <select id="passengers">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+            </div>
+
+            <div class="field field-small">
+              <label for="cls">Class</label>
+              <select id="cls">
+                <option>Economy</option>
+                <option>Business</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cta">
+              <span>Search flights</span>
+              <span class="cta-icon">✈️</span>
+            </button>
+          </form>
+
+          <div id="searchStatus" class="status"></div>
+
+          <div class="scroll-hint fade-in-delayed">
+            <span>Scroll down for live results</span>
+            <span class="arrow">⌄</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <h2>Why FlySmart?</h2>
+      <p class="section-note">
+        Clean landing page · Real AeroDataBox API · Modern UI in white & royal
+        blue.
+      </p>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Real API</h3>
+          <p>
+            We use AeroDataBox via RapidAPI to fetch live distance and estimated
+            flight duration between airports.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>USD Fares</h3>
+          <p>
+            Smart sample fares in USD, calculated from distance. Perfect for
+            international clients.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Modern Design</h3>
+          <p>
+            Background video hero, smooth animations and a premium white & royal
+            blue theme that feels high-end.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section" id="results">
+      <h2>Search results</h2>
+      <p class="section-note">
+        Results are calculated using real AeroDataBox API (distance & flight
+        time) + sample fare estimation in USD.
+      </p>
+      <div id="apiResults" class="results-grid"></div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2025 FlySmart</span>
+      <span>Landing page built with AeroDataBox (RapidAPI) · Demo use only</span>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
